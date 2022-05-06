@@ -1,0 +1,83 @@
+<!-- Inventory Tab -->
+    <script>
+        document.getElementById("inventoryTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("inventoryTab").style.color = "white";
+        document.getElementById("inventoryPic").style.filter = "brightness(0) invert(1)";
+        document.getElementById("titleHeader").innerHTML = "Inventory";
+
+        function validateForm() {
+            var a = document.getElementById("invSearch").value;
+            if (!a) {
+            alert("Please Fill All Required Fields");
+            return false;
+            }
+        }
+    </script>
+    <center>
+        <div class="invBar">
+            <div class="invButtonMain">
+                <div class="invButtonMain">
+                    <form method="POST" action="../inventory" autocomplete="off" onsubmit="return validateForm()">
+                        <input type="search" placeholder="Search" name="search" id="invSearch">
+                        <button type="submit" id="searchButton">Search</button>
+                    </form>
+                    <a href="../archive?page=1" class="invButtons">Archive</a>
+                    &#160
+                    <a href="newuser" class="invButtons">Add Item +</a>
+                </div>
+            </div>
+            {{#unless searcher}}
+                <div>
+                    {{#if paging}}
+                        <form method="get" action="/inventory?">
+                            <button name="page" value="2" onclick="submit()">&gt;</button>
+                        </form>
+                    {{/if}}
+                    {{#unless paging}}
+                        <form method="get" action="/inventory?{{page}}">
+                            {{#unless leastPageReached}}
+                                <button name="page" value="{{pageDown}}" onclick="submit()">&lt;</button>
+                            {{/unless}}
+                            {{#unless maxPageReached}}
+                                <button name="page" value="{{pageUp}}" onclick="submit()">&gt;</button>
+                            {{/unless}}
+                        </form>
+                    {{/unless}}
+                </div>
+            {{/unless}}
+            <table class="mainTable" id="inventoryTable">
+                <thead class="headerTable">
+                    <tr class="rowTable">
+                        <th class="tHeadMini">Product ID</th>
+                        <th class="tHeadMini">Product Name</th>
+                        <th class="tHeadMini">Base Price</th>
+                        <th class="tHeadMini">Product Price</th>
+                        <th class="tHeadMini">Product Type</th>
+                        <th class="tHeadMini">Stock In</th>
+                        <th class="tHeadMini">Stock Out</th>
+                        <th class="tHeadMini">Available Stock</th>
+                        <th class="tHeadMini">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bodyTable">
+
+                    {{#each rows}}
+                    <tr class="rowTable">
+                        <td class="tDataMini">{{this.product_id}}</th>
+                        <td class="tDataMini">{{this.product_name}}</td>
+                        <td class="tDataMini">{{this.base_price}}</td>
+                        <td class="tDataMini">{{this.product_price}}</td>
+                        <td class="tDataMini">{{this.product_type}}</td>
+                        <td class="tDataMini">{{this.stock_in}}</td>
+                        <td class="tDataMini">{{this.stockout}}</td>
+                        <td class="tDataMini">{{this.availablestock}}</td>
+                        <td class="tDataMini">
+                            <a href="/edituser/{{this.product_id}}" type="button">Edit</a>
+                            <a href="/{{this.product_id}}" type="button">Delete</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </center>

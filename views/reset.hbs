@@ -1,0 +1,30 @@
+<script>
+    function checkPass(input) {
+        if (input.value != document.getElementById('passCopy').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+<div class="resetForm">
+        <img src="../images/credMainLogo.png" alt="Logo" class="formLogo">
+        <h2>Reset Password</h2>
+        <form method="POST" action="reset">
+            <div class="inputLogging2">
+                <label for="">Password<span style="color:#ff0000">*</span></label>
+                <br>
+                <input type="password" placeholder="Password" name="password" id="passCopy" required>
+            </div>
+            <div class="inputLogging2">
+                <label for="">Confirm Password<span style="color:#ff0000">*</span></label>
+                <br>
+                <input type="password" placeholder="Confirm Password" required oninput="checkPass(this)">
+            </div>
+            <div>
+                <button type="submit" class="signinButton">Reset Password</button>
+            </div>
+        </form>
+        <a href="login" class="backButton"><button><img src="../images/backButton.png"> BACK</button></a>
+    </div>

@@ -1,0 +1,25 @@
+<div class="loginForm">
+    <img src="../images/credMainLogo.png" alt="Logo" class="formLogo">
+    <h2>Login</h2>
+    <form method="POST" action="login">
+        <div class="inputLogging">
+            <img src="../images/user-login.png" alt="User Icon"><input type="email" placeholder="Email Address" name="email" required>
+        </div>
+        <div class="inputLogging">
+            <img src="../images/password-login.png" alt="Pass Icon"><input type="password" placeholder="Password" name="password" required>
+        </div>
+        <div>
+            <button type="submit" class="signinButton">Sign In</button>
+        </div>
+    </form>
+    {{#if alert}}
+        <h1 class="errorMsg">{{alert}}</h1>
+    {{/if}}
+    {{#if alert1}}
+        <h1 class="successMsg">{{alert1}}</h1>
+    {{/if}}
+    <div id="signinLink">
+        <a href="forgot">Forgot your password?</a>
+        <p>Don't have an account? <a href="register">Sign up here</a></p>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<!-- Sales Tab -->
+    <script>
+        document.getElementById("salesTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("salesTab").style.color = "white";
+        document.getElementById("salesPic").style.filter = "brightness(0) invert(1)";
+        document.getElementById("titleHeader").innerHTML = "Sales";
+
+        function validateForm() {
+            var a = document.getElementById("Date").value;
+            if (!a) {
+            alert("Please Fill All Required Fields");
+            return false;
+            }
+        }
+    </script>
+    <div class="Content">
+        <div class="leftBar" id="leftBarSales">
+            <div class="leftBarContent">
+                <h1 class="titleBox">Most Sold Product (Php)</h1>
+                    {{#data3}}
+                    <center><p id="productnameSales">{{product_name}}</p></center>   <!-- productName -->
+                    <p>Total Quantity Sold: {{quantity}}</p>            <!-- total quantity sold of this -->
+                    <p>Total Sales: Php {{totalsales}}</p>                    <!-- total Sales of this -->
+                    {{/data3}}
+                <br>
+                <h1 class="titleBox">Least Sold Product (Php)</h1>
+                    {{#data2}}
+                    <center><p id="productnameSales">{{product_name}}</p></center>   <!-- productName -->
+                    <p>Total Quantity Sold: {{quantity}}</p>            <!-- total quantity sold of this -->
+                    <p>Total Sales:  Php {{totalsales}}</p>                    <!-- total Sales of this -->
+                    {{/data2}}
+                <!-- Put Graphs here -->
+            </div>
+        </div>
+        <div class="mainBar" id="mainBarSales">
+            <div class="invButtonMain">
+                <div class="invButtonMain">
+                    <form method="POST" action="../sales" autocomplete="off" onsubmit="return validateForm()">
+                        <input type="date" placeholder="Search" name="search" id="Date">
+                        <button type="submit" id="salesSearch">Search</button>
+                    </form>
+                    <a href="addSales" class="invButtons">Add Item +</a>
+                </div>
+            </div>
+            <center>
+                {{#unless searcher}}
+                <div>
+                    {{#if paging}}
+                        <form method="get" action="/sales?">
+                            <button name="page" value="2" onclick="submit()">&gt;</button>
+                        </form>
+                    {{/if}}
+                    {{#unless paging}}
+                        <form method="get" action="/sales?{{page}}">
+                            {{#unless leastPageReached}}
+                                <button name="page" value="{{pageDown}}" onclick="submit()">&lt;</button>
+                            {{/unless}}
+                            {{#unless maxPageReached}}
+                                <button name="page" value="{{pageUp}}" onclick="submit()">&gt;</button>
+                            {{/unless}}
+                        </form>
+                    {{/unless}}
+                </div>
+            {{/unless}}
+            </center>
+            <br>
+            <center>
+            <table class="mainTable" id="salesTable">
+                <h2 id="salesHeaderTable">{{your_date}}</h2>
+                <thead class="headerTable">
+                    <tr class="rowTable">
+                        <th class="tHeadMini">Date</th>
+                        <th class="tHeadMini">Product ID</th>
+                        <th class="tHeadMini">Product Name</th>
+                        <th class="tHeadMini">Product Price</th>
+                        <th class="tHeadMini">Product Type</th>
+                        <th class="tHeadMini">Quantity</th>
+                        <th class="tHeadMini">Total Sales /Day</th>
+                        <th class="tHeadMini">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bodyTable">
+                    {{#each data1}}
+                    <tr class="rowTable">
+                        <td class="tDataMini">{{your_date}}</td>
+                        <td class="tDataMini">{{product_id}}</td>
+                        <td class="tDataMini">{{product_name}}</td>
+                        <td class="tDataMini">{{product_price}}</td>
+                        <td class="tDataMini">{{product_type}}</td>
+                        <td class="tDataMini">{{daySales}}</td>
+                        <td class="tDataMini">Php {{salesperday}}</td>
+                        <td class="tDataMini">
+                            <a href="/editSales/{{this.salesID}}" type="button">Edit</a>
+                            <a href="/sales/{{this.salesID}}" type="button">Delete</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            </center>
+        </div>
+    </div>

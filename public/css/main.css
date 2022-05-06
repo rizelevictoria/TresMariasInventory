@@ -1,0 +1,341 @@
+/*
+    Left Side bar = #FFC9C9;
+    main bar = #FFF8EA;
+*/
+/* =================================== MAIN BODY =================================== */
+html{
+    /*overflow-y    :hidden;*/
+    overflow-x      :hidden;
+}
+*{
+    font-family     : Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #FFE0E0;
+    text-align      : center;
+    margin          : 0;
+    padding         : 0;
+}
+nav{
+    background-color: #FFC9C9;
+    width           : 100%;
+    height          : 48px;
+}
+.navigation{
+    width           : 905px;
+}
+.tabs{
+    background-color: #FFC9C9;
+    list-style-type : none;
+    text-decoration : none;
+    display         : inline-block;
+    color           : black;
+    font-size       : 20px;
+    padding-top     : 10px;
+    padding-right   : 40px;
+    padding-bottom  : 10px;
+    padding-left    : 30px;
+    border: none;
+}
+.tabs img{
+    width           : 30px;
+    height          : auto;
+    vertical-align  : bottom;
+}
+.header{
+    font-size       : 25px;
+    width           : 700px;
+}
+.header img{
+    width           : 100px;
+    height          : auto;
+    display         : inline-block;
+    vertical-align  : middle;
+    padding-right   : 15px;
+    padding-bottom  : 10px;
+}
+.header h2{
+    display         : inline-block;
+    background-color: white;
+    border          : 2px solid black;
+    padding         : 10px 10px 0 10px;
+    width           : 500px;
+    height          : 55px;
+}
+/* =================================== MAIN FOOTER =================================== */
+footer{
+    margin-top      : 10px;
+    margin-bottom   : 5px;
+    width           : 100%;
+    bottom          : 0;
+}
+#goldenLine{
+    background      : linear-gradient(90deg, rgba(233,197,0,1) 0%, rgba(170,133,57,1) 100%);
+    height          : 10px;
+    width           : 100%;
+    margin-top      : 20px;
+    margin-bottom   : 10px;
+}
+
+
+/* =================================== TABLE'S GENERAL DESIGN =================================== */
+.mainTable{     /* table */
+    margin          : 10px;
+    max-height: 570px;
+}
+.headerTable{   /* Thead */
+    
+}
+.bodyTable{     /* Tbody */
+    
+}
+.rowTable{      /* tr */
+    
+}
+.tHeadMini{     /* th */
+    font-weight     : bold;
+}
+.tDataMini{     /* td */
+    
+}
+.mainTable, .tHeadMini, .tDataMini {
+    border          : 1px solid grey;
+    border-collapse : collapse;
+    text-align      : center;
+    padding         : 5px 10px;
+    width           : auto;
+}
+#actionTable img{
+    width           : 12px;
+    height          : auto;
+}
+/* =================================== EDIT/ADD ITEM PAGE =================================== */
+
+
+
+
+
+/* =================================== CUSTOM CSS FOR EACH PAGES =================================== */
+
+/* =================================== GENERAL DESIGN FOR User/Dashboard/Sales =================================== */
+.leftBar{
+    width           : 200px;
+    height          : 710px;
+    margin          : 5px;
+    padding         : 10px 10px 0px 20px;
+    background-color: #FFC9C9;
+    display         : inline-block;
+    vertical-align  : top;
+    border          : 2px solid black;
+    text-align      : left;
+}
+.mainBar{
+    width           : 600px;
+    height          : 720px;
+    margin          : 5px 10px 0px 20px;
+    padding         : 0;
+    background-color: white;
+    display         : inline-block;
+    border          : 2px solid black;
+    text-align      : center;
+}
+.titleBox{
+    text-align      : center;
+    padding         : 5px 10px;
+    margin          : 0 10px 0 0;
+    height          : 24px;
+    font-size       : 20px;
+    border          : 2px solid #977e63;
+    color           : #7e5427;
+    background-color: white;
+}
+
+/* =================================== USER PAGE =================================== */
+#userBar{
+    height: 500px;
+    width: 700px;
+}
+#userBar h1{
+    text-align: left;
+    padding: 15px 0;
+    font-size: 22px;
+    margin: 2px;
+}
+
+/* =================================== DASHBOARD PAGE =================================== */
+#dashboardHeader{
+    text-align      : center;
+    padding         : 10px 0;
+    width           : 100%;
+    background-color: #FFC9C9;
+}
+#dashboardTable{
+    width: 550px;
+    table-layout: fixed;
+}
+.leftBarContent p{
+    text-align: center;
+    margin: 2px;
+}
+.mainBar h3{
+    font-weight: normal;
+}
+
+/* =================================== INVENTORY PAGE =================================== */
+.invBar{
+    width           : 970px;
+    height          : 705px;
+    margin          : 5px 0 0 0;
+    padding         : 10px 10px 10px 20px;
+    background-color: white;
+    border          : 2px solid black;
+}
+.invButtons{
+    text-decoration : none;
+    text-align      : center;
+    padding         : 5px 10px;
+    margin          : 0;
+    width           : 80px;
+    height          : 18px;
+    border          : 1px solid #977e63;
+    color           : #7e5427;
+    background-color: #FFE0E0;
+}
+.invButtonMain *{
+    display: inline-block;
+}
+.invButtonMain button{
+    text-align      : center;
+    padding         : 5px 10px;
+    height          : 30px;
+    margin          : 1px 488px 0 0;
+    border          : 1px solid #977e63;
+    color           : #7e5427;
+    background-color: #FFE0E0;
+}
+.invButtonMain input{
+    height: 30px;
+}
+#inventoryTable{
+    width: 950px;
+    table-layout: fixed;
+    max-height: 620px;
+}
+
+/* =================================== SALES PAGE =================================== */
+#salesTable{
+    width: 950px;
+    table-layout: fixed;
+}
+#salesHeaderTable{
+    text-align: left; 
+    margin: 15px 0 -10px 30px;
+}
+#mainBarSales{
+    width           : 980px;
+    height          : 700px;
+    text-align      : left;
+    padding         : 10px;
+}
+#salesSearch{
+    margin          : 1px 5px 0 0;
+}
+.titleBox{
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.leftBarContent p{
+    margin: 5px 5px 5px 5px;
+}
+#productnameSales{
+    font-weight: bold;
+    margin-left: -10px;
+}
+#leftBarSales{
+    height: 710px;
+    width: 270px;
+}
+
+/* =================================== ADD/EDIT OF INVENTORY PAGE =================================== */
+.inventoryControllers{
+    width           : 600px;
+    height          : 370px;
+    margin          : 50px 10px 50px 20px;
+    padding         : 15px;
+    background-color: white;
+    display         : inline-block;
+    border          : 2px solid black;
+    text-align      : left;
+}
+.navAddEdit{
+    background-color: transparent;
+    text-decoration: none;
+    color: grey;
+}
+/* TRIAL */
+.tdAddEdit{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 5px;
+}
+.tdAddEdit input{
+    width: 120px;
+}
+.successMsg{
+    font-size       : 12px;
+    color           : rgb(40, 151, 40);
+    margin          : 10px;
+}
+.failMsg{
+    font-size       : 12px;
+    color           : rgb(213, 0, 0);
+    margin          : 10px;
+}
+/* =================================== ADD/EDIT OF SALES PAGE =================================== */
+.salesControllers{
+    width           : 450px;
+    height          : 330px;
+    margin          : 70px 10px 70px 20px;
+    padding         : 15px;
+    background-color: white;
+    display         : inline-block;
+    border          : 2px solid black;
+    text-align      : left;
+}
+
+/* =================================== LOGOUT =================================== */
+#logout{
+    overflow        : hidden;
+    display         : none; /* block or none */
+    position        : absolute;
+    z-index         : 9999;
+    left            : 51%;
+    top             : 40%;
+    transform       : translate(-50%, -50%);
+    width           : 400px;
+    height          : 300px;
+    background-color: #FFC9C9;
+    border          : 2px solid black;
+    text-align      : center;
+    border-radius   : 5px;
+    box-shadow      : 0 0 60px #d1a6a6;
+}
+#logout h2{
+    margin          : 60px;
+    font-size       : 35px;
+}
+.logoutButton{
+    font-size       : 18px;
+    width           : 150px;
+    height          : 40px;
+    margin          : 10px 10px;
+    padding         : 5px;
+    background-color: #FFE0E0;
+    border          : none;
+    border-radius   : 5px;
+}
+.logoutButton:hover{
+    background-color: #E4A6A6;
+    color           : white;
+    border-radius   : 5px;
+}

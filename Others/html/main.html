@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Marias Inventory System</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <script>
+        function confirm(){
+            document.getElementById("logout").style.display = "block";
+            document.getElementById("logoutTab").style.backgroundColor = "#E4A6A6";
+            document.getElementById("logoutTab").style.color = "white";
+            document.getElementById("logoutPic").style.filter = "brightness(0) invert(1)";
+        }
+        function cancel(){
+            document.getElementById("logout").style.display = "none";
+            document.getElementById("logoutTab").style.backgroundColor = "#FFC9C9";
+            document.getElementById("logoutTab").style.color = "black";
+            document.getElementById("logoutPic").style.filter = "";
+        }
+    </script>
+    <center>
+    <nav>
+        <div class="navigation">
+            <a href="user" class="tabs" id="userTab"><img src="images&css/user-navi.png" id="userPic">User</a>
+            <a href="/"class="tabs" id="dashboardTab"><img src="images&css/dashboard-navi.png" id="dashboardPic">Dashboard</a>
+            <a href="inventory" class="tabs" id="inventoryTab"><img src="images&css/inventory-navi.png" id="inventoryPic">Inventory</a>
+            <a href="sales" class="tabs" id="salesTab"><img src="images&css/sales-navi.png" id="salesPic">Sales</a>
+            <button class="tabs" id="logoutTab" onclick="confirm()"><img src="images&css/logout-navi.png" id="logoutPic">Logout</button>
+        </div>
+    </nav>
+    <!-- Logout Tab -->
+    <div id="logout">
+        <h2>Are you sure?</h2>
+        <a href="close"><button class="logoutButton">Exit</button></a>
+        <button class="logoutButton" onclick="cancel()">Cancel</button>
+    </div>
+    <!-- Header -->
+    <div class="header">
+        <img src="images&css/credMainLogo.png"><h2>User Information</h2>
+    </div>
+    </center>
+
+    <!-- Start of Body -->
+    <!-- User Tab -->
+    <script>
+        document.getElementById("userTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("userTab").style.color = "white";
+        document.getElementById("userPic").style.filter = "brightness(0) invert(1)";
+    </script>
+    <div class="Content">
+        <div class="leftBar">
+            <h2 class="titleBox">try</h2>
+        </div>
+        <div class="mainBar">
+            <h2 id="dashboardHeader">DASHBOARD</h2>
+            <table class="mainTable">
+                <thead class="headerTable">
+                    <tr class="rowTable">
+                        <th class="tHeadMini">Product ID</th>
+                        <th class="tHeadMini">Product Name</th>
+                        <th class="tHeadMini">Product Type</th>
+                    </tr>
+                </thead>
+                <tbody class="bodyTable">
+                    <tr class="rowTable">
+                        <td class="tDataMini">1</td>
+                        <td class="tDataMini">Colgate</td>
+                        <td class="tDataMini">Toothpaste</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
+    <!-- Dashboard Tab -->
+    <script>
+        document.getElementById("dashboardTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("dashboardTab").style.color = "white";
+        document.getElementById("dashboardPic").style.filter = "brightness(0) invert(1)";
+    </script>
+    <div class="Content">
+        <div class="leftBar">
+            
+        </div>
+        <div class="mainBar">
+            <table>
+                <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Units Sold</th>
+                      <th>Units on Hand</th>
+                      <th>Units to Come</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#data2}}
+                      {{total}}
+                  {{/data2}}
+                  {{#data3}}
+                      {{total2}}
+                  {{/data3}}
+              
+                  {{#data1}}
+                  <tr>
+                      <td>{{product_name}}</td>
+                      <td>{{product_price}}</td>
+                      <td>{{available_stock}}</td>
+                      <td>{{stock_in}}</td>
+                  </tr>
+                  {{/data1}}
+              
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Inventory Tab -->
+    <script>
+        document.getElementById("inventoryTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("inventoryTab").style.color = "white";
+        document.getElementById("inventoryPic").style.filter = "brightness(0) invert(1)";
+    </script>
+    <center>
+        <div class="invBar">
+
+        </div>
+    </center>
+
+    <!-- Sales Tab -->
+    <script>
+        document.getElementById("salesTab").style.backgroundColor = "#E4A6A6";
+        document.getElementById("salesTab").style.color = "white";
+        document.getElementById("salesPic").style.filter = "brightness(0) invert(1)";
+    </script>
+    <div class="Content">
+        <div class="leftBar">
+            
+        </div>
+        <div class="mainBar">
+            
+        </div>
+    </div>
+    
+    <!-- Inventory Add/Edit Button -->
+    <div>
+
+    </div>
+
+    <!-- Sales Add/Edit Button -->
+    <div>
+
+    </div>
+
+    <!-- End of Body -->
+
+    <footer>
+        <hr id="goldenLine">
+        <div>&copy 2021 - 2022 Tres Marias Inventory System created by GRADU8. All Rights Reserved.</div>
+    </footer>
+</body>
+</html>

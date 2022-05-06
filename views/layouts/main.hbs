@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Marias Inventory System</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="#">
+    </script>
+</head>
+<body>
+    <script>
+        function confirm(){
+            document.getElementById("logout").style.display = "block";
+            document.getElementById("logoutTab").style.backgroundColor = "#E4A6A6";
+            document.getElementById("logoutTab").style.color = "white";
+            document.getElementById("logoutPic").style.filter = "brightness(0) invert(1)";
+        }
+        function cancel(){
+            document.getElementById("logout").style.display = "none";
+            document.getElementById("logoutTab").style.backgroundColor = "#FFC9C9";
+            document.getElementById("logoutTab").style.color = "black";
+            document.getElementById("logoutPic").style.filter = "";
+        }
+    </script>
+
+    
+    <center>
+    <nav>
+        <div class="navigation">
+            <a href="../user" class="tabs" id="userTab"><img src="../images/user-navi.png" id="userPic">User</a>
+            <a href="../dashboard"class="tabs" id="dashboardTab"><img src="../images/dashboard-navi.png" id="dashboardPic">Dashboard</a>
+            <a href="../inventory?page=1" class="tabs" id="inventoryTab"><img src="../images/inventory-navi.png" id="inventoryPic">Inventory</a>
+            <a href="../sales?page=1" class="tabs" id="salesTab"><img src="../images/sales-navi.png" id="salesPic">Sales</a>
+            <button class="tabs" id="logoutTab" onclick="confirm()"><img src="../images/logout-navi.png" id="logoutPic">Logout</button>
+        </div>
+    </nav>
+    <!-- Logout Tab -->
+    <div id="logout">
+        <h2>Are you sure?</h2>
+        <a href="/close"><button class="logoutButton">Yes</button></a>
+        <button class="logoutButton" onclick="cancel()">No</button>
+    </div>
+    <!-- Header -->
+    <div class="header">
+        <img src="../images/credMainLogo.png"><h2 id="titleHeader">-- --</h2>
+    </div>
+    </center>
+
+    <!-- Start of Body -->
+    <div>
+        {{{body}}}
+    </div>
+    <!-- End of Body -->
+
+    <footer>
+        <hr id="goldenLine">
+        <div>&copy 2021 - 2022 Tres Marias Inventory System created by GRADU8. All Rights Reserved.</div>
+    </footer>
+</body>
+</html>

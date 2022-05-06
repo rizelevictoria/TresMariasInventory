@@ -1,0 +1,84 @@
+<script>
+    function checkEmail(input) {
+        if (input.value != document.getElementById('emailCopy').value) {
+            input.setCustomValidity('Email Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+    function checkPass(input) {
+        if (input.value != document.getElementById('passCopy').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+
+<div>
+    <img src="../images/credMainLogo.png" alt="Logo" class="formLogo" id="registerLogo">
+    <div class="registerForm">
+        <h2><svg viewBox="-60 0 300 30"><text y="25">Create Account</text></svg></h2>
+        <p>By submitting, you agree to our <a href="#" target=”_blank”>Terms & Conditions</a></p>
+        <form method="POST" action="/register">
+            <div class="inputRegister">
+                <div class="label">
+                    <label for="">Name<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="text" name="firstName" id="" placeholder="First Name" required>
+                </div>
+                <div class="label">
+                    <input type="text" name="lastName" id="" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="inputRegister">
+                <div class="label">
+                    <label for="">Email Address<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="email" name="email" id="emailCopy" placeholder="Email Address" required>
+                </div>
+                <div class="label">
+                    <label for="">Confirm Email<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="email" id="" placeholder="Confirm Email" required oninput="checkEmail(this)">
+                </div>
+            </div>
+            <div class="inputRegister">
+                <div class="label">
+                    <label for="">Password<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="password" name="password" id="passCopy" placeholder="Password" required>
+                </div>
+                <div class="label">
+                    <label for="">Confirm Password<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="password" id="" placeholder="Confirm Password" required oninput="checkPass(this)">
+                </div>
+            </div>
+            <div class="inputRegister">
+                <div class="label">
+                    <label for="">Contact Number<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="number" name="contact" id="" placeholder="Contact Number" required>
+                </div>
+                <div class="label">
+                    <label for="">Employee ID<span style="color:#ff0000">*</span></label>
+                    <br>
+                    <input type="number" name="emp_id" id="" placeholder="Employee ID" required>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="signinButton">Create Account</button>
+            </div>
+        </form>
+        {{#if alert1}}
+            <h1 class="successMsg">{{alert1}}</h1>
+        {{/if}}
+        {{#if alert}}
+            <h1 class="errorMsg">{{alert}}</h1>
+        {{/if}}
+        <a href="login" class="backButton"><button><img src="../images/backButton.png"> BACK</button></a>
+    </div>
+</div>

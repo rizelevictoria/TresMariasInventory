@@ -1,0 +1,33 @@
+<table>
+    <tr>
+        <td class="tdAddEdit"><label for="statusType">Status</label></td>
+        <td class="tdAddEdit">
+            <select name="status" id="statusType" value="{{this.status}}" placeholder="status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </td>
+        <td class="tdAddEdit"><label for="basePrice">Base Price</label></td>
+        <td class="tdAddEdit"><input type="number" min="0" step="1" onkeydown="return event.keyCode!== 109 && event.keyCode !== 189" title="Numbers only" name="base_price" id="basePrice" value="{{this.base_price}}" placeholder="Base Price"></td>
+    </tr>
+    <tr>
+        <td class="tdAddEdit"><label for="productName">Product Name</label></td>
+        <td class="tdAddEdit"><input type="?" name="product_name" id="productName" value="{{this.product_name}}" placeholder="Product Name"></td>
+        <td class="tdAddEdit"><label for="productPrice">Product Price</label></td>
+        <td class="tdAddEdit"><input type="number" min="1" step="1" onkeydown="return event.keyCode!== 109 && event.keyCode !== 189" title="Numbers only" name="product_price" id="productPrice" value="{{this.product_price}}" placeholder="Product Price"></td>
+    </tr>
+    <tr>
+        <td class="tdAddEdit"><label for="productType">Product Type</label></td>
+        <td class="tdAddEdit"><input type="?" name="product_type" id="productType" value="{{this.product_type}}" placeholder="Product Type"></td>
+        <td class="tdAddEdit"><label for="stockIn">Stock In</label></td>
+        <td class="tdAddEdit">
+            <input type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Numbers only" 
+            name="stock_in" id="stockIn" value="{{this.stock_in}}" placeholder="Stock In">
+        </td>
+    </tr>
+</table>
+<div>
+    <center>
+    <button type="submit" class="logoutButton">Submit</button>
+    </center>
+</div>

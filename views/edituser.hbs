@@ -1,0 +1,23 @@
+<script>
+  document.getElementById("titleHeader").innerHTML = "Inventory - Edit Item";
+</script>
+
+<div class="inventoryControllers">
+  <div>
+      <nav class="navAddEdit">
+        <a href="../inventory?page=1">Inventory</a>/Edit Item
+      </nav>
+  </div>
+  <div>
+    {{#each rows}}
+      <form method="POST" action="/edituser/{{this.product_id}}" novalidate>
+        {{> user-form}}
+      </form>
+    {{/each}}
+    <center>
+    {{#if alert}}
+        <h1 class="successMsg">{{alert}}</h1>
+    {{/if}}
+    </center>
+  </div>
+</div>

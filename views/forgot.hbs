@@ -1,0 +1,18 @@
+<div class="forgotForm">
+    <img src="../images/credMainLogo.png" alt="Logo" class="formLogo">
+    <h2>Forgot Password</h2>
+    <p>Enter your Email Address<span style="color:#ff0000">*</span></p> 
+    <form method="POST" action="forgot">
+        <div class="inputLogging2">
+            <input type="email" placeholder="Email Address" name="email" required>
+        </div>
+        <div class="inputLogging2">
+            <input type="number" placeholder="Phone Number" name="numberPhone" required>
+        </div>
+        <div>
+            <button type="submit" class="signinButton">Forgot Password</button>
+        </div>
+    </form>
+    <div class="errorMsg">{{alert}}</div>
+    <a href="login" class="backButton"><button><img src="../images/backButton.png"> BACK</button></a>
+</div>

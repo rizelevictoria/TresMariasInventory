@@ -1,0 +1,29 @@
+<a href="close">asdasdasd</a>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Units Sold</th>
+        <th scope="col">Units on Hand</th>
+        <th scope="col">Units to Come</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#data2}}
+        {{total}}
+    {{/data2}}
+    {{#data3}}
+        {{total2}}
+    {{/data3}}
+
+    {{#data1}}
+    <tr>
+        <td>{{product_name}}</td>
+        <td>{{product_price}}</td>
+        <td>{{available_stock}}</td>
+        <td>{{stock_in}}</td>
+    </tr>
+    {{/data1}}
+
+  </tbody>
+</table>

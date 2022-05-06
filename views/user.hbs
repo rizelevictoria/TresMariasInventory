@@ -1,0 +1,37 @@
+<script>
+    document.getElementById("userTab").style.backgroundColor = "#E4A6A6";
+    document.getElementById("userTab").style.color = "white";
+    document.getElementById("userPic").style.filter = "brightness(0) invert(1)";
+    document.getElementById("titleHeader").innerHTML = "User Information";
+</script>
+<div class="Content">
+    <div class="mainBar" id="userBar">
+    <center>
+        <h2 id="dashboardHeader">Personal Information</h2>
+        {{#res1}}
+        <table>
+            <tr>
+                <td><h1>Employee ID</h1></td>
+                <td><h1>: {{emp_id}}</h1></td>
+            </tr>
+            <tr>
+                <td><h1>First Name</h1></td>
+                <td><h1>: {{firstName}}</h1></td>
+            </tr>
+            <tr>
+                <td><h1>Last Name</h1></td>
+                <td><h1>: {{lastName}}</h1></td>
+            </tr>
+            <tr>
+                <td><h1>Email</h1></td>
+                <td><h1>: {{email}}</h1></td>
+            </tr>
+            <tr>
+                <td><h1>Contact #</h1></td>
+                <td><h1>: {{contact}}</h1></td>
+            </tr>
+        </table>
+        {{/res1}}
+    </center>
+    </div>
+</div>

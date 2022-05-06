@@ -1,0 +1,26 @@
+<script>
+  document.getElementById("titleHeader").innerHTML = "Sales - Edit Item";
+</script>
+
+<div class="salesControllers">
+  <div>
+      <nav class="navAddEdit">
+        <a href="../sales?page=1">Sales</a>/Edit Item
+      </nav>
+  </div>
+  <div>
+    <center>
+    {{#each rows}}
+      <form method="POST" action="/editSales/{{this.salesID}}" novalidate>
+        {{> sales-form}}
+      </form>
+    {{/each}}
+    {{#if alert}}
+        <h1 class="successMsg">{{alert}}</h1>
+    {{/if}}
+    {{#if alert1}}
+        <h1 class="failMsg">{{alert1}}</h1>
+      {{/if}}
+    </center>
+  </div>
+</div>

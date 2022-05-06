@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <td class="tdAddEdit"><label for="productName">Date:</label></td>
+        <td class="tdAddEdit"><input onfocus="(this.type='date')" onblur="(this.type='text')" type="date" placeholder="{{this.datenow}}" name="date" id="productName" value="{{this.date}}" required></td>
+    </tr>
+    <tr>
+        <td class="tdAddEdit"><label for="productType">Product ID</label></td>
+        <td class="tdAddEdit"><input type="?" onkeydown="return event.keyCode!== 109 && event.keyCode !== 189" name="product_id" id="productType" value="{{this.productID}}" placeholder="{{this.productID}}" required></td>
+    </tr>
+    <tr>
+        <td class="tdAddEdit"><label for="stockOut">Sales</label></td>
+        <td class="tdAddEdit">
+            <input type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Numbers only" 
+                name="daySales" id="stockOut" value="{{this.daySales}}" placeholder="Sales" required>
+        </td>
+    </tr>
+</table>
+<div>
+    <center>
+    <button type="submit" class="logoutButton">Submit</button>
+    </center>
+</div>
